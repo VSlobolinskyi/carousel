@@ -1,0 +1,62 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.root {
+  position: relative;
+}
+
+.controlls {
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+  z-index: 10;
+}
+
+.controlls > * {
+  margin: 0 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.controlls > *:first-child {
+  background: black;
+}
+
+.controlls > *:last-child {
+  background: white;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.carousel--reverse {
+  flex-direction: row-reverse;
+}
+
+.carousel_img {
+  width: 100%;
+}
+
+.carousel--reverse > .carousel_img:first-of-type {
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel--reverse > .carousel_img:last-of-type {
+  margin-left: -100%;
+  transition: all 0.3s ease-in-out;
+}
+
+*:not(.carousel--reverse) > .carousel_img:first-of-type {
+  margin-right: -100%;
+  transition: all 0.3s ease-in-out;
+}
+
+*:not(.carousel--reverse) > .carousel_img:last-of-type {
+  transition: all 0.3s ease-in-out;
+  margin-right: 0;
+}
